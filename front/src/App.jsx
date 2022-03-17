@@ -6,6 +6,7 @@ import Post from "./Post/Post.jsx";
 import Register from "./Register/Register.jsx";
 import User from "./User/User.jsx";
 import Messages from "./Messages/Messages.jsx";
+import Follows from "./Follows/Follows.jsx";
 
 export default function App()
 {
@@ -13,12 +14,12 @@ export default function App()
         <BrowserRouter>
             <div id="appCont">
             <Routes>
-                <Route path= '/front/public/index.html' element={<User/>}>
-                    <Route path= '/front/public/index.html/register' element={<Register/>}/>
-                    <Route path= '/front/public/index.html/home' element={<Home/>}/>
+                <Route path= '/' element={<User/>}>
+                    <Route path= '/register' element={<Register/>}/>
+                    <Route path= '/home' element={<Home/>}/>
                 </Route>
                 <Route path={"/user"} element={<Fragment><User/><UserBoard/></Fragment>}/>
-                <Route path="*" element={<User/>} />
+                <Route path="*" element={<Follows/>} />
             </Routes>
             </div>
         </BrowserRouter>
@@ -31,8 +32,8 @@ function UserBoard () {
             <Routes>
                 <Route path= '/favorites' element={<User/>}/>
                 <Route path= '/posts/:postId' element={<Post/>}/>
-                <Route path= '/following' element={<User/>}/>
-                <Route path= '/followers' element={<User/>}/>
+                <Route path= '/following' element={<Follows/>}/>
+                <Route path= '/followers' element={<Follows/>}/>
                 <Route path= '/messages' element={<Messages/>}/>
             </Routes>
         </div>
