@@ -11,7 +11,7 @@ export interface Post {
 
 const UserSchema = new Schema<Post>(
     {
-        userid: {type: String, unique: true},
+        userid: {type: String},
         image: {type:String},
         title: {type:String},
         likes: {type: []},

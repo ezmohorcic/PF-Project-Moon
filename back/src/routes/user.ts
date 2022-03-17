@@ -29,12 +29,14 @@ router.put('/:id',verifyToken, async (req:Request,res:Response) => {
     }
 })
 
+//Follower and Following
 router.put('/:id/follow', async (req: Request, res: Response) => {
     if(req.body.userId !== req.params.id) {
         try {
             const user = await User.findById(req.params.id)
-            const currentUser = await User.findById(req.body.id)
-            if(!user.followers.includes(req.body.id)) {
+            const currentUser = await User.findById(req.body.userId)
+            console.log(currentUser)
+            if(!user.followers.includes(req.body.userId)) {
                 await user.updateOne({$push: {followers: req.body.userId}})
                 await currentUser.updateOne({$push: {following: req.params.id}})
                 res.status(200).json('Esta siguiendo a este usuario')
