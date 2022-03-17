@@ -1,12 +1,14 @@
 import {Schema,model} from 'mongoose'
 
 export interface User {
-    username?: string;
-    email: string;
-    password?: string;
-    image?: string;
-    followers: number []
-    following: number []
+    username?: string
+    email: string
+    password?: string
+    image?: string
+    followers?: number []
+    following?: number []
+    favourites?: number []
+    history?: object []
 }
 
 const UserSchema = new Schema<User>(
@@ -17,6 +19,7 @@ const UserSchema = new Schema<User>(
         image: {type:String},
         followers: {type: []},
         following: {type: []},
+        favourites: {type: []},
     },
     {timestamps:true}
     )
