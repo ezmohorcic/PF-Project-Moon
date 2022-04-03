@@ -61,7 +61,7 @@ export default function Sold() {
                         </div>
 
                         <div className={SoldCss.purchasedShell}>
-                            <img className={SoldCss.purchased} src={sold.post.image? sold.post.image[0] : ""}/>
+                            <img className={SoldCss.purchased} src={sold.post?.image? sold.post.image[0] : ""}/>
                         </div>
 
                     </div>
