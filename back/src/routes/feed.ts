@@ -54,7 +54,7 @@ router.get('/:idUser', async (req:Request, res:Response) => {
                 }
                 }
                 
-                posts = postsAux.filter((post:any) => user.followings.includes(post.user) || user.followings.includes(post.shareUser))
+                posts = postsAux.filter((post:any) => user.followings.includes(post.user) || user.followings.includes(post.shareUser)) 
         
                 if (filter) {
                     if(filter === "designsOnly") {

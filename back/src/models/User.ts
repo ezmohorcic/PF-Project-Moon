@@ -7,6 +7,7 @@ const UserSchema = new Schema(
         birthday: {type:String},
         artist: {type:Boolean, default: false},
         admin: {type:Boolean, default: false},
+        banned: {type:Boolean, default: false},
         email: {type:String,unique:true},
         password: {type:String},
         profilePhoto: {type:String},
